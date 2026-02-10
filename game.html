@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Game</title>
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<div class="game-container">
+
+  <!-- HERO INTRO -->
+  <section class="game-hero hero-frame">
+
+    <div class="hero-left">
+      <p class="hero-tag">FIVE CHAPTERS. FIVE REVEALS.</p>
+
+      <h1 class="hero-title">
+        Wifey , welcome to the itinerary.
+      </h1>
+
+      <p class="hero-sub">
+        This space is created to unfold slowly and naturally.
+        No pressure. No proving Just peace, presence, and soft-girl energy..
+      </p>
+
+      <div class="hero-nav">
+        <button onclick="scrollToChapter('chapter1')">Islands</button>
+        <button onclick="scrollToChapter('chapter2')">Soft Beginnings</button>
+        <button onclick="scrollToChapter('chapter3')">The Dinner Choice</button>
+        <button onclick="scrollToChapter('chapter4')">The Promise</button>
+        <button onclick="scrollToChapter('chapter5')">Our Journey</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <h3>How it works</h3>
+      <p>
+        Open each chapter. Follow the clue. Unlock the reveal.
+        If you skip a chapter, nothing breaks.
+      </p>
+
+      <div class="hero-tip">
+        Tip: If you want to keep things spoiler free,
+        do not scroll too fast.
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- SOUNDTRACK -->
+  <div class="game-panel">
+    <h2>Soundtrack</h2>
+
+    <audio controls>
+      <source src="music/song1.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+      <source src="music/song2.mp3" type="audio/mpeg">
+    </audio>
+
+   <audio controls>
+      <source src="music/song3.mp3" type="audio/mpeg">
+    </audio>
+    
+     <audio controls>
+      <source src="music/song4.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+      <source src="music/song5.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+      <source src="music/song6.mp3" type="audio/mpeg">
+    </audio>
+  
+  </div>
+
+
+  <!-- CHAPTER ONE -->
+<div class="game-panel" id="chapterOne">
+
+  <h2>Chapter One: Roots</h2>
+
+  <div class="riddle-box">
+    Three islands hold the beginning of us.<br>
+    One is shared by two worlds.<br>
+    One moves to the rhythm of life.<br>
+    One feels like the heart of the sea.<br>
+    <strong>Find them.</strong>
+  </div>
+
+  <div class="map-container">
+    <div id="travelMap"></div>
+<div id="mapResult">Find our islands…</div>
+
+  </div>
+
+
+
+<div id="chapter1Result" style="margin-top:15px;"></div>
+
+
+  <!-- CHAPTER TWO -->
+  <!-- CHAPTER TWO -->
+<!-- CHAPTER TWO -->
+<div class="game-panel" id="chapterTwo">
+
+  <h2>Chapter Two: Soft Beginnings</h2>
+  <p>Three memories. One moment that changed everything.</p>
+
+
+
+  <div id="memoryResult" style="margin-top:15px;"></div>
+
+  <p class="tip">Tip: Trust your memory.</p>
+
+</div>
+
+ <div class="memory-row">
+
+  <!-- Image 1 -->
+  <div class="memory-card">
+    <img src="sept.jpg" class="memory-img">
+    <p class="memory-question">
+      1) What is this an image of?
+    </p>
+  </div>
+
+  <!-- PLUS -->
+  <div class="memory-plus">+</div>
+
+  <!-- Image 2 -->
+  <div class="memory-card">
+    <img src="3rd.jpg" class="memory-img">
+    <p class="memory-question">
+      2) What is this an image of?
+    </p>
+  </div>
+
+  <!-- PLUS -->
+  <div class="memory-plus">+</div>
+
+  <!-- Image 3 -->
+  <div class="memory-card">
+    <img src="2018.jpg" class="memory-img">
+    <p class="memory-question">
+      ?
+    </p>
+  
+  <div class="answers">
+    <input id="answer1" placeholder="Answer 1">
+    <input id="answer2" placeholder="Answer 2">
+    <input id="answer3" placeholder="Answer 3">
+  </div>
+
+   <div class="button-row">
+    <button onclick="checkMemoryDate()">Check</button>
+    <button onclick="clearMemoryDate()">Clear</button>
+  </div>
+
+  <div id="memoryResult" style="margin-top:15px;"></div>
+
+  <p class="tip">Tip: Trust your memory.</p>
+
+</div>
+
+
+<!-- CHAPTER THREE -->> 
+ 
+<div class="game-panel" id="chapterFive">
+
+  <h2>Chapter Three: The Dinner Choice</h2>
+
+  <div class="chapter-sub">
+    Let’s take a gentle pause from the games tonight…<br>
+     Now it’s your turn — choose what your heart is craving. Choose wisely. ✨
+  </div>
+
+  <!-- Header Image -->
+  <img src="finedine.jpg" class="chapter-image" alt="Dinner mood">
+
+  <!-- Options -->
+  <div class="dinner-options">
+
+    <button class="dinner-btn" onclick="selectDinner('Steak')">
+      🥩 Steak
+    </button>
+
+    <button class="dinner-btn" onclick="selectDinner('Seafood')">
+      🦞 Seafood
+    </button>
+
+    <button class="dinner-btn" onclick="selectDinner('Mexican')">
+      🌮 Mexican
+    </button>
+
+    <button class="dinner-btn" onclick="selectDinner('Other')">
+      ✨ Other
+    </button>
+
+  </div>
+
+  <div id="dinnerResult" class="dinner-result"></div>
+
+</div>
+
+
+  
+<!-- CHAPTER FOUR -->
+<div class="game-panel" id="chapterFour">
+
+  <h2>Chapter Four: The Promise</h2>
+
+  <div class="riddle-box">
+    <p>
+      A loving intelligent angel walks beside me, guiding my heart with gentle light.<br>
+      Love grows deeper when two souls choose patience, understanding, and grace.<br>
+      Wisdom teaches us to see each other beyond feelings — into purpose and truth.<br>
+      A sacred bond like ours turns ordinary moments into something eternal.<br>
+      Your spirit and mine move together, learning, healing, and rising as one.<br>
+      So in marriage, I choose you always, in love, in light, and in soul ❤️💍.<br>
+    </p>
+
+  </div>
+
+  <input id="alwaysInput" placeholder="One word">
+
+  <div class="button-row">
+    <button onclick="checkAlways()">Unlock</button>
+    <button onclick="clearAlways()">Clear</button>
+  </div>
+
+  <div id="alwaysResult" class="chapter-result"></div>
+
+<script src="script.js"></script>
+</body>
+<!-- LOVE LETTER SECTION -->
+<div class="game-panel" id="chapterFive"></div>
+
+<h2 class="chapter-title">Chapter Five: Our Journey</h2>
+  <div class="Chapter-title">
+
+  <img src="christmas.jpg" class="love-image">
+
+  <p class="love-text">
+    From the moment our paths crossed in 2018, my life began to change in ways I could have never imagined. Through every season, every challenge, and every beautiful moment, our journey has been guided by something greater than us. 
+
+    I am so grateful and deeply blessed to call you my fiancée, the woman my heart chose and my soul recognizes. I love you not only for your strengths and your light, but for every imperfect, human part of you — because your flaws are part of the beautiful soul I cherish. 
+
+    Loving you feels spiritual, like a promise written long before we met, and I thank God every day for the path that led me to you. I look forward to all that is ahead, growing together, choosing each other, and loving you more with every step of the journey ❤️💍.
+  </p>
+
+</div>
